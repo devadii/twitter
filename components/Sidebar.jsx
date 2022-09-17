@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import twitterPng from "../public/twitter.png";
 import SidebarMenuItems from "./SidebarMenuItems";
@@ -15,6 +16,8 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Sidebar = () => {
+  const { data: session } = useSession();
+  console.log(sesssion);
   return (
     <div className="min-h-screen hidden sm:flex flex-col justify-between p-2 w-max xl:w-auto fixed  ">
       <div className="">

@@ -54,8 +54,8 @@ const Feed = () => {
       </div>
       <Input />
       <div className=" h-full">
-        {posts.map((post) => (
-          <Post post={post} key={post.key} />
+        {posts.map((post, index) => (
+          <Post post={post} key={index} />
         ))}
       </div>
     </div>
