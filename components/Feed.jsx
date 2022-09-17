@@ -47,13 +47,13 @@ const posts = [
 
 const Feed = () => {
   return (
-    <div className="h-screen max-w-xl sm:ml-[75px] xl:ml-[270px] border-l border-r">
-      <div className="flex items-center justify-between p-1 xl:p-2 border-b">
+    <div className="h-full max-w-xl sm:ml-[75px] xl:ml-[270px] border-l border-r ">
+      <div className="flex items-center justify-between p-1 xl:p-2 border-b sticky top-0 bg-white">
         <p className="text-lg font-bold">Home</p>
         <SparklesIcon className="h-5" />
       </div>
       <Input />
-      <div className="">
+      <div className=" h-full">
         {posts.map((post) => (
           <Post post={post} key={post.key} />
         ))}
