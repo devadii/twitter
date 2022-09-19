@@ -17,7 +17,7 @@ import {
 
 const Sidebar = () => {
   const { data: session } = useSession();
-  console.log(sesssion);
+  console.log(session);
   return (
     <div className="min-h-screen hidden sm:flex flex-col justify-between p-2 w-max xl:w-auto fixed  ">
       <div className="">
