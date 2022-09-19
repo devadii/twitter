@@ -7,5 +7,9 @@ module.exports = {
   theme: {
     extend: {},
   },
+  images: {
+    domains: ["https://lh3.googleusercontent.com/"],
+  },
+
   plugins: [require("@tailwindcss/forms")],
 };
