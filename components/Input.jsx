@@ -8,11 +8,20 @@ const Input = () => {
   const { data: session } = useSession();
   const [input, setInput] = useState("");
   const fileRef = useRef();
-  console.log(fileRef);
   const tweetPost = async () => {
     const docRef = await addDoc(collection(db, "posts"), {
       text: input,
     });
+  };
+
+  const addimageToPost = (e) => {
+    const reader = new FileReader();
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]);
+    }
+    reader.onload = (event) => {
+      console.log(event.target.result);
+    };
   };
   return (
     <>
@@ -37,7 +46,12 @@ const Input = () => {
                   onClick={() => fileRef.current.click()}
                   className="h-7 text-sky-500 cursor-pointer hover:brightness-90 pr-1 hover:scale-95"
                 />
-                <input type="file" hidden ref={fileRef} />
+                <input
+                  type="file"
+                  hidden
+                  ref={fileRef}
+                  onClick={addimageToPost}
+                />
                 <FaceSmileIcon className="h-7 text-sky-500 cursor-pointer hover:brightness-90 hover:scale-95" />
               </div>
               <button
