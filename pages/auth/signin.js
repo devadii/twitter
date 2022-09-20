@@ -4,7 +4,7 @@ const signin = ({ providers }) => {
     <div className="h-screen w-screen flex overflow-hidden">
       <div className="hidden md:inline flex-1 h-full">
         <img
-          src="https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png"
+          src="https://img.freepik.com/premium-photo/tiktok-minimal-logo-tiktok-clean-background_125322-8.jpg?w=2000"
           alt=""
           className="w-full h-full"
         />
