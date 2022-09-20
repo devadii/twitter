@@ -7,11 +7,13 @@ import { db } from "../firebase";
 const Input = () => {
   const { data: session } = useSession();
   const [input, setInput] = useState("");
+  const [selectedFile, setSelectedFile] = useState("");
   const fileRef = useRef();
   const tweetPost = async () => {
-    const docRef = await addDoc(collection(db, "posts"), {
-      text: input,
-    });
+    // const docRef = await addDoc(collection(db, "posts"), {
+    //   text: input,
+    // });
+    console.log(selectedFile);
   };
 
   const addimageToPost = (e) => {
@@ -20,7 +22,7 @@ const Input = () => {
       reader.readAsDataURL(e.target.files[0]);
     }
     reader.onload = (event) => {
-      console.log(event.target.result);
+      setSelectedFile(event.target.result);
     };
   };
   return (
