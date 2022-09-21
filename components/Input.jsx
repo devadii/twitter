@@ -5,7 +5,13 @@ import {
 } from "@heroicons/react/24/outline";
 import React, { useRef, useState } from "react";
 import { useSession } from "next-auth/react";
-import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
 import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
@@ -21,7 +27,11 @@ const Input = () => {
     setLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
       id: session.user.uid,
+      name: session.user.name,
+      email: session.user.email,
+      userImg: session.user.image,
       text: input,
+      timestamp: serverTimestamp(),
     });
 
     const imageRef = ref(storage, `posts/${docRef.id}/images`);
