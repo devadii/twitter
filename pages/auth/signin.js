@@ -3,11 +3,7 @@ const signin = ({ providers }) => {
   return (
     <div className="h-screen w-screen flex overflow-hidden">
       <div className="hidden md:inline flex-1 h-full">
-        <img
-          src="https://img.freepik.com/premium-photo/tiktok-minimal-logo-tiktok-clean-background_125322-8.jpg?w=2000"
-          alt=""
-          className="w-full h-full"
-        />
+        <img src="/auth_logo.jpg" alt="" className="w-full h-full" />
       </div>
       <div className="flex-1 h-full flex flex-col justify-center p-2 md:p-6">
         <img src="/twitter.png" alt="" className="w-[60px] h-[60px] mb-4" />

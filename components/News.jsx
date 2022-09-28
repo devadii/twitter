@@ -1,7 +1,7 @@
 const News = ({ data }) => {
   return (
     <div className="flex items-center mt-4">
-      <a href={data.url} target="_blank">
+      <a href={data.url} target="_blank" rel="noreferrer">
         <div className="">
           <p className="font-bold text-sm">{data.title}</p>
           <p className="font-bold  text-sm text-gray-400">{data.source.name}</p>

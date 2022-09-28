@@ -65,9 +65,9 @@ const Input = () => {
         <div className="relative">
           {loading && (
             <div className="flex items-center justify-center absolute top-[50%] left-[50%] w-5 h-5 z-10">
-              <span class="flex h-5 w-5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-5 w-5 bg-sky-500"></span>
+              <span className="flex h-5 w-5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-5 w-5 bg-sky-500"></span>
               </span>
             </div>
           )}

@@ -14,21 +14,7 @@ import { db } from "../firebase";
 
 const Post = ({ post }) => {
   const { data: session } = useSession();
-  const [likes, setLikes] = useState();
 
-  useEffect(() => {
-    const unsub = onSnapshot(
-      collection(db, "posts", post.id, "likes"),
-      (snapshot) => {
-        console.log(snapshot.docs);
-      }
-    );
-  }, []);
-  const likePost = async () => {
-    await setDoc(doc(db, "posts", post.id, "likes", session.user.uid), {
-      likedBy: session.user.name,
-    });
-  };
   return (
     <div className="p-1 xl:p-2 flex border-t border-b w-full">
       <img
@@ -63,10 +49,7 @@ const Post = ({ post }) => {
         <div className="text-gray-600 flex items-center justify-between p-2">
           <ChatBubbleOvalLeftEllipsisIcon className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-blue-500" />
           <TrashIcon className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-red-500" />
-          <HeartIcon
-            onClick={likePost}
-            className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-red-500"
-          />
+          <HeartIcon className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-red-500" />
           <ShareIcon className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-blue-500" />
           <ChartBarIcon className="h-5 cursor-pointer hover:brightness-90 hover:scale-95 hover:text-blue-500" />
         </div>
